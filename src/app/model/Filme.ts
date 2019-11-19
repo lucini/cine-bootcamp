@@ -1,0 +1,19 @@
+import {Ator} from './Ator';
+import {ClassificacaoEnum} from '../enumerations/classificacao.enum';
+
+export class Filme {
+  id: number;
+  titulo: string;
+  dataLancamento: Date;
+  precoBilhete: number;
+  dataCadastro: Date;
+  genero: string;
+  atorList: Ator[];
+  classificacao: ClassificacaoEnum;
+
+
+  constructor() {
+    this.dataCadastro = new Date();
+    this.atorList = [];
+  }
+}
