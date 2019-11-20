@@ -21,8 +21,8 @@ export class FilmeService {
   }
 
   remove(filme: Filme): void {
-    // const filmeAchado = this.filmeList.find(item => item.id === filme.id);
+    const index = this.filmeList.findIndex(item => item.id === filme.id);
 
-    this.filmeList.pop();
+    this.filmeList.splice(index, 1);
   }
 }

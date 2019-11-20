@@ -19,7 +19,6 @@ export class FilmeListComponent implements OnInit {
     filme.titulo = 'Star Wars';
     this.filmeService.add(filme);
     // this.filmeService.remove(filme);
-    // setTimeout(() => console.log(this.filmeService.findAll()), 1000);
     this.filmeList = this.filmeService.findAll();
   }
 
