@@ -2,6 +2,7 @@ import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FilmeService} from '../service/filme.service';
 import {Filme} from '../model/Filme';
 import {Observable} from 'rxjs';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-filme-list',
@@ -13,10 +14,12 @@ export class FilmeListComponent implements OnInit, OnDestroy {
   filmeList$: Observable<Filme[]>;
   tooltip: string;
 
-  constructor(private filmeService: FilmeService) {
+  constructor(private filmeService: FilmeService,
+              private titleService: Title) {
   }
 
   ngOnInit(): void {
+    this.titleService.setTitle('Cine BootCamp - Filmes');
     this.gerarFilmes();
     // this.filmeService.remove(filme);
     // this.filmeService.findAll()
