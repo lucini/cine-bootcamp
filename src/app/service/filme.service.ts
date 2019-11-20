@@ -1,5 +1,8 @@
 import {Injectable} from '@angular/core';
 import {Filme} from '../model/Filme';
+import {Observable, of as observableOf, throwError} from 'rxjs';
+import {delay} from 'rxjs/operators';
+import {error} from 'util';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +16,9 @@ export class FilmeService {
     this.filmeList = [];
   }
 
-  findAll(): Filme[] {
-    return JSON.parse(localStorage.getItem(this.KEY_FILMES));
+  findAll(): Observable<Filme[]> {
+    // return throwError(error('ERRO'));
+    return observableOf(JSON.parse(localStorage.getItem(this.KEY_FILMES))).pipe(delay(2000));
   }
 
   add(filme: Filme): void {

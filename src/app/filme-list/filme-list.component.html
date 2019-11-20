@@ -16,7 +16,7 @@
           </tr>
           </thead>
           <tbody>
-          <ng-container *ngFor="let filme of filmeList">
+          <ng-container *ngFor="let filme of filmeList$ | async">
             <tr *ngIf="filme"
                 [class.zoom]="!filme.inativo"
                 [class.verde]="filme.precoBilhete <= 10"

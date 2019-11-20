@@ -9,6 +9,7 @@ import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import {InativoPipe} from './pipe/inativo.pipe';
 import {FormsModule} from '@angular/forms';
+import { NavBarComponent } from './component/nav-bar/nav-bar.component';
 
 registerLocaleData(localePt, 'pt');
 
@@ -18,6 +19,7 @@ registerLocaleData(localePt, 'pt');
     HomeComponent,
     FilmeListComponent,
     InativoPipe,
+    NavBarComponent,
   ],
   imports: [
     BrowserModule,

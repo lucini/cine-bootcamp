@@ -1,6 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FilmeService} from '../service/filme.service';
 import {Filme} from '../model/Filme';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-filme-list',
@@ -9,7 +10,7 @@ import {Filme} from '../model/Filme';
 })
 export class FilmeListComponent implements OnInit, OnDestroy {
 
-  filmeList: Filme[];
+  filmeList$: Observable<Filme[]>;
   tooltip: string;
 
   constructor(private filmeService: FilmeService) {
@@ -18,7 +19,13 @@ export class FilmeListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.gerarFilmes();
     // this.filmeService.remove(filme);
-    this.filmeList = this.filmeService.findAll();
+    // this.filmeService.findAll()
+    //   .subscribe(
+    //     filmeList => this.filmeList = filmeList,
+    //     error => console.log(error),
+    //     () => console.log('OK')
+    //   );
+    this.filmeList$ = this.filmeService.findAll();
   }
 
   private gerarFilmes(): void {
@@ -57,6 +64,12 @@ export class FilmeListComponent implements OnInit, OnDestroy {
   }
 
   setTitle(filme: Filme): void {
+
+    if (filme.inativo) {
+      this.tooltip = 'Inativo';
+      return;
+    }
+
     if (filme.precoBilhete <= 10) {
       this.tooltip = 'Custo baixo';
     }
