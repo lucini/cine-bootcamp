@@ -8,6 +8,7 @@ import {FilmeListComponent} from './filme-list/filme-list.component';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
 import {InativoPipe} from './pipe/inativo.pipe';
+import {FormsModule} from '@angular/forms';
 
 registerLocaleData(localePt, 'pt');
 
@@ -20,7 +21,8 @@ registerLocaleData(localePt, 'pt');
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     {

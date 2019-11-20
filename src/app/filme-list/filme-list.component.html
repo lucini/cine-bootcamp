@@ -2,6 +2,7 @@
   <div class="card-body">
     <div class="card-title">Lista de Filmes</div>
     <div class="row">
+<!--      <input type="text" [(ngModel)]="meuinput">-->
       <div class="col-12">
         <table class="table table-striped">
           <thead>
@@ -17,11 +18,13 @@
           <tbody>
           <ng-container *ngFor="let filme of filmeList">
             <tr *ngIf="filme"
+                [class.zoom]="!filme.inativo"
                 [class.verde]="filme.precoBilhete <= 10"
                 [class.azul]="filme.precoBilhete > 10 && filme.precoBilhete <= 20"
                 [class.amarelo]="filme.precoBilhete > 20 && filme.precoBilhete < 40"
                 [class.vermelho]="filme.precoBilhete >= 40"
-                [title]="getTitle(filme)"
+                (mouseenter)="setTitle(filme)"
+                [title]="tooltip"
                 [style.fontSize.px]="20">
               <th scope="row">{{ filme.id }}</th>
               <td class="text-center">{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>

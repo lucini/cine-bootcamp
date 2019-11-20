@@ -10,6 +10,7 @@ import {Filme} from '../model/Filme';
 export class FilmeListComponent implements OnInit, OnDestroy {
 
   filmeList: Filme[];
+  tooltip: string;
 
   constructor(private filmeService: FilmeService) {
   }
@@ -55,21 +56,21 @@ export class FilmeListComponent implements OnInit, OnDestroy {
     this.filmeService.clear();
   }
 
-  getTitle(filme: Filme): string {
+  setTitle(filme: Filme): void {
     if (filme.precoBilhete <= 10) {
-      return 'Custo baixo';
+      this.tooltip = 'Custo baixo';
     }
 
     if (filme.precoBilhete > 10 && filme.precoBilhete <= 20) {
-      return 'Custo regular';
+      this.tooltip = 'Custo regular';
     }
 
     if (filme.precoBilhete > 20 && filme.precoBilhete < 40) {
-      return 'Custo médio';
+      this.tooltip = 'Custo médio';
     }
 
     if (filme.precoBilhete >= 40) {
-      return 'Custo Alto';
+      this.tooltip = 'Custo Alto';
     }
   }
 }

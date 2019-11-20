@@ -1,18 +1,28 @@
+$vermelho: #cf545f;
+
 ::ng-deep .table {
   color: black;
   font-size: 0.8em;
 }
 
 .vermelho {
-  background-color: #cf545f !important;
+  background-color: $vermelho !important;
   font-weight: 600;
   color: white;
+  &:hover {
+    background-color: darken($vermelho, 30) !important;
+  }
+
 }
 
 .amarelo {
   background-color: #c9cf55 !important;
   font-weight: 600;
   color: black;
+
+  &:hover {
+    background-color: lighten(#c9cf55, 10) !important;
+  }
 }
 
 .verde {
@@ -31,4 +41,14 @@
 .inativo {
   color: #778689;
   background-color: white !important;
+}
+
+.zoom {
+  transform: scale(1);
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  transition: 2s;
 }
