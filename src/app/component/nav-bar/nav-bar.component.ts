@@ -14,8 +14,8 @@ export class NavBarComponent implements OnInit {
 
   ngOnInit(): void {
     this.menuList = [];
-    this.menuList.push({descricao: 'Home', rota: ['']});
-    this.menuList.push({descricao: 'Filmes', rota: ['filme-list']});
+    this.menuList.push({descricao: 'Home', rota: [''], icone: 'fa-home'});
+    this.menuList.push({descricao: 'Filmes', rota: ['filme-list'], icone: 'fa-film'});
   }
 
 }
