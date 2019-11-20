@@ -20,7 +20,7 @@
               <td>{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>
               <td>{{ filme.titulo }}</td>
               <td class="text-right">{{ filme.precoBilhete | currency:'BRL'}}</td>
-              <td class="text-center">{{ filme.inativo }}</td>
+              <td class="text-center">{{ filme.inativo | inativo }}</td>
             </tr>
           </ng-container>
           </tbody>

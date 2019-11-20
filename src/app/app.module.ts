@@ -7,14 +7,16 @@ import {HomeComponent} from './home/home.component';
 import {FilmeListComponent} from './filme-list/filme-list.component';
 import localePt from '@angular/common/locales/pt';
 import {registerLocaleData} from '@angular/common';
+import {InativoPipe} from './pipe/inativo.pipe';
 
 registerLocaleData(localePt, 'pt');
 
-  @NgModule({
+@NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    FilmeListComponent
+    FilmeListComponent,
+    InativoPipe,
   ],
   imports: [
     BrowserModule,
@@ -28,4 +30,5 @@ registerLocaleData(localePt, 'pt');
   ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
