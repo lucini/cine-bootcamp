@@ -7,7 +7,8 @@
           <thead>
           <tr>
             <th scope="col">#</th>
-            <th scope="col">Data Cadastro</th>
+            <th class="text-center" scope="col">Data Cadastro</th>
+            <th class="text-center" scope="col">Data Lançamento</th>
             <th scope="col">Titulo</th>
             <th class="text-right" scope="col">Preço do Bilhete</th>
             <th class="text-center" scope="col">Inativo</th>
@@ -18,6 +19,7 @@
             <tr *ngIf="filme">
               <th scope="row">{{ filme.id }}</th>
               <td>{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>
+              <td>{{ filme.dataLancamento | date:'dd/MM/yyyy' }}</td>
               <td>{{ filme.titulo }}</td>
               <td class="text-right">{{ filme.precoBilhete | currency:'BRL'}}</td>
               <td class="text-center">{{ filme.inativo | inativo }}</td>

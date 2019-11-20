@@ -18,6 +18,7 @@ export class FilmeListComponent implements OnInit, OnDestroy {
     filme.id = 1;
     filme.titulo = 'Star Wars';
     filme.precoBilhete = 40.5;
+    filme.dataLancamento = new Date(1988, 3, 15);
     this.filmeService.add(filme);
     // this.filmeService.remove(filme);
     this.filmeList = this.filmeService.findAll();
