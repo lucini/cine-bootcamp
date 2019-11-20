@@ -1,0 +1,34 @@
+::ng-deep .table {
+  color: black;
+  font-size: 0.8em;
+}
+
+.vermelho {
+  background-color: #cf545f !important;
+  font-weight: 600;
+  color: white;
+}
+
+.amarelo {
+  background-color: #c9cf55 !important;
+  font-weight: 600;
+  color: black;
+}
+
+.verde {
+  background-color: #67cf63 !important;
+  font-weight: 600;
+  color: white;
+}
+
+.azul {
+  background-color: #5367cf !important;
+  font-weight: 600;
+  color: white;
+}
+
+
+.inativo {
+  color: #778689;
+  background-color: white !important;
+}

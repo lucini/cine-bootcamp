@@ -16,10 +16,16 @@
           </thead>
           <tbody>
           <ng-container *ngFor="let filme of filmeList">
-            <tr *ngIf="filme">
+            <tr *ngIf="filme"
+                [class.verde]="filme.precoBilhete <= 10"
+                [class.azul]="filme.precoBilhete > 10 && filme.precoBilhete <= 20"
+                [class.amarelo]="filme.precoBilhete > 20 && filme.precoBilhete < 40"
+                [class.vermelho]="filme.precoBilhete >= 40"
+                [title]="getTitle(filme)"
+                [style.fontSize.px]="20">
               <th scope="row">{{ filme.id }}</th>
-              <td>{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>
-              <td>{{ filme.dataLancamento | date:'dd/MM/yyyy' }}</td>
+              <td class="text-center">{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>
+              <td class="text-center">{{ filme.dataLancamento | date:'dd/MM/yyyy' }}</td>
               <td>{{ filme.titulo }}</td>
               <td class="text-right">{{ filme.precoBilhete | currency:'BRL'}}</td>
               <td class="text-center">{{ filme.inativo | inativo }}</td>
