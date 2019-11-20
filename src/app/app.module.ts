@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { FilmeListComponent } from './filme-list/filme-list.component';
+import {FilmeService} from './service/filme.service';
 
 @NgModule({
   declarations: [
