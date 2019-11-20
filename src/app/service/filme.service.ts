@@ -25,4 +25,8 @@ export class FilmeService {
 
     this.filmeList.splice(index, 1);
   }
+
+  clear(): void {
+    this.filmeList = [];
+  }
 }

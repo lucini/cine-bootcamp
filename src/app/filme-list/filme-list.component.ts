@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnDestroy, OnInit} from '@angular/core';
 import {FilmeService} from '../service/filme.service';
 import {Filme} from '../model/Filme';
 
@@ -7,7 +7,7 @@ import {Filme} from '../model/Filme';
   templateUrl: './filme-list.component.html',
   styleUrls: ['./filme-list.component.scss']
 })
-export class FilmeListComponent implements OnInit {
+export class FilmeListComponent implements OnInit, OnDestroy {
 
   filmeList: Filme[];
 
@@ -17,9 +17,14 @@ export class FilmeListComponent implements OnInit {
     const filme = new Filme();
     filme.id = 1;
     filme.titulo = 'Star Wars';
+    filme.precoBilhete = 40.5;
     this.filmeService.add(filme);
     // this.filmeService.remove(filme);
     this.filmeList = this.filmeService.findAll();
+  }
+
+  ngOnDestroy(): void {
+    this.filmeService.clear();
   }
 
 }

@@ -11,9 +11,11 @@ export class Filme {
   genero: string;
   atorList: Ator[];
   classificacao: ClassificacaoEnum;
+  inativo: boolean;
 
   constructor() {
     this.dataCadastro = new Date();
     this.atorList = [];
+    this.inativo = false;
   }
 }

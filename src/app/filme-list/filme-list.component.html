@@ -9,6 +9,8 @@
             <th scope="col">#</th>
             <th scope="col">Data Cadastro</th>
             <th scope="col">Titulo</th>
+            <th class="text-right" scope="col">Preço do Bilhete</th>
+            <th class="text-center" scope="col">Inativo</th>
           </tr>
           </thead>
           <tbody>
@@ -17,6 +19,8 @@
               <th scope="row">{{ filme.id }}</th>
               <td>{{ filme.dataCadastro | date:'dd/MM/yyyy' }}</td>
               <td>{{ filme.titulo }}</td>
+              <td class="text-right">{{ filme.precoBilhete | currency:'BRL'}}</td>
+              <td class="text-center">{{ filme.inativo }}</td>
             </tr>
           </ng-container>
           </tbody>
